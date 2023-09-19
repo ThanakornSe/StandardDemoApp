@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "StandardDemoApp"
 include(":app")
+include(":smart-living")
