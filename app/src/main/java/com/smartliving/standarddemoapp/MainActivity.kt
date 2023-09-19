@@ -17,7 +17,7 @@ import scgwedotest.sdk.ui.deeplink.DeepLinkActivity
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    //private val smartLivingSDKRouter: SmartLivingSDKRouter = SmartLivingSDKRouterImpl()
+    private val smartLivingSDKRouter: SmartLivingSDKRouter = SmartLivingSDKRouterImpl()
 
     private val url =
         "smartliving://main?username=namchok jittidecha&name=&location=&accessToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlRYeDFaOHI5RzBESVZrY3FYemlWTyJ9.eyJodHRwczovL3d3dy5zY2ctaWQuY29tL3NvdXJjZV9jaGFubmVsIjoiTWluZCBNb2JpbGUiLCJodHRwczovL3d3dy5zY2ctaWQuY29tL3JvbGVzIjpbXSwiaHR0cHM6Ly93d3cuc2NnLWlkLmNvbS9jbGllbnRfaWQiOiJoVGxKNDdOdlBSakVFNUVsMGVhT1JjRGk5aHBZSTNTWCIsImh0dHBzOi8vd3d3LnNjZy1pZC5jb20vc2NnaWQiOiIyMDIzMDAxMzIxIiwiaXNzIjoiaHR0cHM6Ly9zc28tZGV2LnNjZy1pZC5jb20vIiwic3ViIjoiYXV0aDB8MjAyMzAwMTMyMSIsImF1ZCI6WyJodHRwczovL2FwaS5zY2ctaWQuY29tIiwiaHR0cHM6Ly9zY2ctaWQtZGV2LmF1LmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2ODk5MjQ5MzIsImV4cCI6MTY5MDAxMTMzMiwiYXpwIjoiaFRsSjQ3TnZQUmpFRTVFbDBlYU9SY0RpOWhwWUkzU1giLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIG9mZmxpbmVfYWNjZXNzIn0.HD5T4p32AvIJwq5sPcjKEKApj_K1_yeDG6Bes2vB3t3RNQ9FWdJRLo2k-C_1ihG518TnBJwhHLjy8yQxen6wftWe-iDnQn_NbZ22xVkL6l5AlqBiIJfNxJsN-QwDgPnmSiP_3Z8fOa0kr9FoHufg-cSsSk3SoGU3u_S0NU_ntXiGxr_XYnM7fDrQfnBG_2RSI6UvleWpjnSMer3060XXyrcyEsMzSB3XtWCRvC6A6pa7t7xuln0IbtaHmgvrbIz13l614nEc_yiu4NOCpe2mjxzy4RPOHhqe0rv-GPFOqLpv37VoF4Gm3pUzZn7LJX5xWgtupi87Xmbi0vvctsxk-g&userType=non-tuya-user"
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        )
 
-        //navigateDeeplink()
+        navigateDeeplink()
 
 
     }
@@ -70,30 +70,30 @@ class MainActivity : AppCompatActivity() {
 //        })
 //    }
 //
-//    private fun navigateDeeplink() {
-////        val url =
-////            "smartliving://main?username=namchok jittidecha&name=&location=&accessToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlRYeDFaOHI5RzBESVZrY3FYemlWTyJ9.eyJodHRwczovL3d3dy5zY2ctaWQuY29tL3NvdXJjZV9jaGFubmVsIjoiTWluZCBNb2JpbGUiLCJodHRwczovL3d3dy5zY2ctaWQuY29tL3JvbGVzIjpbXSwiaHR0cHM6Ly93d3cuc2NnLWlkLmNvbS9jbGllbnRfaWQiOiJoVGxKNDdOdlBSakVFNUVsMGVhT1JjRGk5aHBZSTNTWCIsImh0dHBzOi8vd3d3LnNjZy1pZC5jb20vc2NnaWQiOiIyMDIzMDAxMzIxIiwiaXNzIjoiaHR0cHM6Ly9zc28tZGV2LnNjZy1pZC5jb20vIiwic3ViIjoiYXV0aDB8MjAyMzAwMTMyMSIsImF1ZCI6WyJodHRwczovL2FwaS5zY2ctaWQuY29tIiwiaHR0cHM6Ly9zY2ctaWQtZGV2LmF1LmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2ODk5MjQ5MzIsImV4cCI6MTY5MDAxMTMzMiwiYXpwIjoiaFRsSjQ3TnZQUmpFRTVFbDBlYU9SY0RpOWhwWUkzU1giLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIG9mZmxpbmVfYWNjZXNzIn0.HD5T4p32AvIJwq5sPcjKEKApj_K1_yeDG6Bes2vB3t3RNQ9FWdJRLo2k-C_1ihG518TnBJwhHLjy8yQxen6wftWe-iDnQn_NbZ22xVkL6l5AlqBiIJfNxJsN-QwDgPnmSiP_3Z8fOa0kr9FoHufg-cSsSk3SoGU3u_S0NU_ntXiGxr_XYnM7fDrQfnBG_2RSI6UvleWpjnSMer3060XXyrcyEsMzSB3XtWCRvC6A6pa7t7xuln0IbtaHmgvrbIz13l614nEc_yiu4NOCpe2mjxzy4RPOHhqe0rv-GPFOqLpv37VoF4Gm3pUzZn7LJX5xWgtupi87Xmbi0vvctsxk-g&userType=non-tuya-user"
-////                DeeplinkSDKRouterImpl().goToDeeplinkSDK(
-////                    applicationContext,
-////                    url
-////                )
-////        smartLivingSDKRouter.goToSmartLivingSDK(this, "", "")
-//        smartLivingSDKRouter.goToDeeplinkSDK(
-//            applicationContext,
-//            DeeplinkSDKModel(
-//                username = "namchok jittidecha",
-//                name = "",
-//                location = "",
-//                accessToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlRYeDFaOHI5RzBESVZrY3FYemlWTyJ9.eyJodHRwczovL3d3dy5zY2ctaWQuY29tL3NvdXJjZV9jaGFubmVsIjoiTWluZCBNb2JpbGUiLCJodHRwczovL3d3dy5zY2ctaWQuY29tL3JvbGVzIjpbXSwiaHR0cHM6Ly93d3cuc2NnLWlkLmNvbS9jbGllbnRfaWQiOiJoVGxKNDdOdlBSakVFNUVsMGVhT1JjRGk5aHBZSTNTWCIsImh0dHBzOi8vd3d3LnNjZy1pZC5jb20vc2NnaWQiOiIyMDIzMDAxMzIxIiwiaXNzIjoiaHR0cHM6Ly9zc28tZGV2LnNjZy1pZC5jb20vIiwic3ViIjoiYXV0aDB8MjAyMzAwMTMyMSIsImF1ZCI6WyJodHRwczovL2FwaS5zY2ctaWQuY29tIiwiaHR0cHM6Ly9zY2ctaWQtZGV2LmF1LmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2ODk5MjQ5MzIsImV4cCI6MTY5MDAxMTMzMiwiYXpwIjoiaFRsSjQ3TnZQUmpFRTVFbDBlYU9SY0RpOWhwWUkzU1giLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIG9mZmxpbmVfYWNjZXNzIn0.HD5T4p32AvIJwq5sPcjKEKApj_K1_yeDG6Bes2vB3t3RNQ9FWdJRLo2k-C_1ihG518TnBJwhHLjy8yQxen6wftWe-iDnQn_NbZ22xVkL6l5AlqBiIJfNxJsN-QwDgPnmSiP_3Z8fOa0kr9FoHufg-cSsSk3SoGU3u_S0NU_ntXiGxr_XYnM7fDrQfnBG_2RSI6UvleWpjnSMer3060XXyrcyEsMzSB3XtWCRvC6A6pa7t7xuln0IbtaHmgvrbIz13l614nEc_yiu4NOCpe2mjxzy4RPOHhqe0rv-GPFOqLpv37VoF4Gm3pUzZn7LJX5xWgtupi87Xmbi0vvctsxk-g",
-//                userType = "non-tuya-user"
-//            )
-//        )
-//        val intent = Intent(applicationContext, DeepLinkActivity::class.java)
-//        intent.data =
-//            Uri.parse(url)
-//        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-//        startActivity(intent)
-//        finish()
-//    }
+    private fun navigateDeeplink() {
+//        val url =
+//            "smartliving://main?username=namchok jittidecha&name=&location=&accessToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlRYeDFaOHI5RzBESVZrY3FYemlWTyJ9.eyJodHRwczovL3d3dy5zY2ctaWQuY29tL3NvdXJjZV9jaGFubmVsIjoiTWluZCBNb2JpbGUiLCJodHRwczovL3d3dy5zY2ctaWQuY29tL3JvbGVzIjpbXSwiaHR0cHM6Ly93d3cuc2NnLWlkLmNvbS9jbGllbnRfaWQiOiJoVGxKNDdOdlBSakVFNUVsMGVhT1JjRGk5aHBZSTNTWCIsImh0dHBzOi8vd3d3LnNjZy1pZC5jb20vc2NnaWQiOiIyMDIzMDAxMzIxIiwiaXNzIjoiaHR0cHM6Ly9zc28tZGV2LnNjZy1pZC5jb20vIiwic3ViIjoiYXV0aDB8MjAyMzAwMTMyMSIsImF1ZCI6WyJodHRwczovL2FwaS5zY2ctaWQuY29tIiwiaHR0cHM6Ly9zY2ctaWQtZGV2LmF1LmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2ODk5MjQ5MzIsImV4cCI6MTY5MDAxMTMzMiwiYXpwIjoiaFRsSjQ3TnZQUmpFRTVFbDBlYU9SY0RpOWhwWUkzU1giLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIG9mZmxpbmVfYWNjZXNzIn0.HD5T4p32AvIJwq5sPcjKEKApj_K1_yeDG6Bes2vB3t3RNQ9FWdJRLo2k-C_1ihG518TnBJwhHLjy8yQxen6wftWe-iDnQn_NbZ22xVkL6l5AlqBiIJfNxJsN-QwDgPnmSiP_3Z8fOa0kr9FoHufg-cSsSk3SoGU3u_S0NU_ntXiGxr_XYnM7fDrQfnBG_2RSI6UvleWpjnSMer3060XXyrcyEsMzSB3XtWCRvC6A6pa7t7xuln0IbtaHmgvrbIz13l614nEc_yiu4NOCpe2mjxzy4RPOHhqe0rv-GPFOqLpv37VoF4Gm3pUzZn7LJX5xWgtupi87Xmbi0vvctsxk-g&userType=non-tuya-user"
+//                DeeplinkSDKRouterImpl().goToDeeplinkSDK(
+//                    applicationContext,
+//                    url
+//                )
+//        smartLivingSDKRouter.goToSmartLivingSDK(this, "", "")
+        smartLivingSDKRouter.goToDeeplinkSDK(
+            applicationContext,
+            DeeplinkSDKModel(
+                username = "namchok jittidecha",
+                name = "",
+                location = "",
+                accessToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlRYeDFaOHI5RzBESVZrY3FYemlWTyJ9.eyJodHRwczovL3d3dy5zY2ctaWQuY29tL3NvdXJjZV9jaGFubmVsIjoiTWluZCBNb2JpbGUiLCJodHRwczovL3d3dy5zY2ctaWQuY29tL3JvbGVzIjpbXSwiaHR0cHM6Ly93d3cuc2NnLWlkLmNvbS9jbGllbnRfaWQiOiJoVGxKNDdOdlBSakVFNUVsMGVhT1JjRGk5aHBZSTNTWCIsImh0dHBzOi8vd3d3LnNjZy1pZC5jb20vc2NnaWQiOiIyMDIzMDAxMzIxIiwiaXNzIjoiaHR0cHM6Ly9zc28tZGV2LnNjZy1pZC5jb20vIiwic3ViIjoiYXV0aDB8MjAyMzAwMTMyMSIsImF1ZCI6WyJodHRwczovL2FwaS5zY2ctaWQuY29tIiwiaHR0cHM6Ly9zY2ctaWQtZGV2LmF1LmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2ODk5MjQ5MzIsImV4cCI6MTY5MDAxMTMzMiwiYXpwIjoiaFRsSjQ3TnZQUmpFRTVFbDBlYU9SY0RpOWhwWUkzU1giLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIG9mZmxpbmVfYWNjZXNzIn0.HD5T4p32AvIJwq5sPcjKEKApj_K1_yeDG6Bes2vB3t3RNQ9FWdJRLo2k-C_1ihG518TnBJwhHLjy8yQxen6wftWe-iDnQn_NbZ22xVkL6l5AlqBiIJfNxJsN-QwDgPnmSiP_3Z8fOa0kr9FoHufg-cSsSk3SoGU3u_S0NU_ntXiGxr_XYnM7fDrQfnBG_2RSI6UvleWpjnSMer3060XXyrcyEsMzSB3XtWCRvC6A6pa7t7xuln0IbtaHmgvrbIz13l614nEc_yiu4NOCpe2mjxzy4RPOHhqe0rv-GPFOqLpv37VoF4Gm3pUzZn7LJX5xWgtupi87Xmbi0vvctsxk-g",
+                userType = "non-tuya-user"
+            )
+        )
+        val intent = Intent(applicationContext, DeepLinkActivity::class.java)
+        intent.data =
+            Uri.parse(url)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+        finish()
+    }
 
 }
